@@ -1,26 +1,40 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jF3FxXng)
-## Requirements and Prerequisites
+# Blog App — Personal Fork
 
-1. Install postgresql in your environment without docker, install psql cli
-2. Run postgresql 
-3. Connect to postgres with psql cli
-4. Create/Modify user postgres with a new password. ie fellowship for now, Create database fellowship.
-5. Install nvm 
-6. Install node with nvm. latest stable.
+This repository is a personal working fork of the original project.
 
+Purpose:
 
+* Use as a reusable base for tasks, experiments, and small projects
+* Modify freely without affecting upstream
+* Keep a stable starting point I understand
 
-# Commands that are helpful
+## How I Use This Repo
 
-sudo -u postgres psql
-show hba_file;
-show config_file;
+I clone this repo whenever I need a ready‑to‑go application skeleton instead of rebuilding the same setup repeatedly.
 
+```
+git clone https://github.com/DevOpsByNavin/Blog-App.git
+```
 
-In postgresql.conf:
+Then I customize per project as needed.
 
-listen_addresses = 'localhost'
+## Repo Structure
 
+```bash
+./
+├── infra
+│   └── database
+├── README.md
+└── services
+    ├── backend1
+    ├── backend2
+    └── frontend
+```
 
-In pg_hba.conf
-host    all     all     127.0.0.1/32    md5
+> Explore each directory’s `README.md` for details about individual components.
+
+## Attribution
+
+This project is based on the original [Blog-App repository](https://github.com/Jenkins-Organization-824/Blog-App).
+
+All credit for the initial implementation and core structure belongs to the original authors. This fork only adapts and maintains a personal working version for reuse and experimentation.
