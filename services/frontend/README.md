@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Frontend Directory Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The `services/frontend` directory contains the client-side application for the Blog-App project. It's a modern React-based single-page application built with TypeScript, Vite, and Material-UI.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Framework**: React 19.1.0 with TypeScript
+- **Build Tool**: Vite 6.3.5
+- **UI Library**: Material-UI (@mui/material) 7.1.1
+- **Authentication**: Clerk (@clerk/clerk-react) 5.31.9
+- **Routing**: React Router DOM 6.23.1
+- **HTTP Client**: Axios 1.9.0
+- **Rich Text Editor**: React Quill
+- **Markdown Support**: Marked 15.0.12
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Directory Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+services/frontend/
+├── src/
+│   ├── assets/          # Static assets (images, fonts, etc.)
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Application page components
+│   ├── App.tsx          # Main application component with routing
+│   ├── main.tsx         # Application entry point
+│   ├── util.tsx         # Utility functions
+│   └── *.css            # Styling files
+├── public/              # Public static assets
+├── index.html           # HTML template
+├── package.json         # Dependencies and scripts
+├── vite.config.ts       # Vite configuration
+├── tsconfig.*.json      # TypeScript configuration files
+├── eslint.config.js     # ESLint configuration
+└── .env.example         # Environment variables template
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Key Features
+- **Modern UI**: Built with Material-UI components for a polished user interface
+- **Authentication**: Integrated with Clerk for secure user authentication
+- **Rich Text Editing**: Supports blog post creation with React Quill editor
+- **Markdown Rendering**: Converts and displays markdown content
+- **Type Safety**: Full TypeScript support for better code quality
+- **Code Quality**: ESLint configuration for consistent code style
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (TypeScript compilation + Vite build)
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build locally
+- `npm run clean` - Clean build artifacts
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Development
+The frontend follows a modern React application structure with routing handled by React Router DOM. Authentication is managed through Clerk, and the UI leverages Material-UI's comprehensive component library for a consistent design system.
