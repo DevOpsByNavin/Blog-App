@@ -1,5 +1,8 @@
 import { Router } from 'express';
 
+import blogRoutes from './blogRoutes';
+import commentRoutes from './commentRoutes';
+
 const router = Router();
 
 // Health endpoint
