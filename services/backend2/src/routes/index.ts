@@ -8,5 +8,7 @@ router.get('/health', (req, res) => {
 });
 
 // Other routes...
+router.use('/api/blogs', blogRoutes);
+router.use('/api/comments', commentRoutes);
 
 export default router;
